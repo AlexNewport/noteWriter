@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking Application</title>
+    <link rel="stylesheet" type="text/css" href="notes.css" />
+    <script type="text/javascript" src="./lib/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="./js/notes.js"></script>
+</head>
+<body>
+    <h1>Alex Newport's Note Taking Application</h1>
+    <div id="actionMenu">
+        <div class="action">
+            <label>
+                Delete note at slot # 
+                <input type="number" id="noteToDelete" class="singleNumInput" value="1" min="1" max="9"/>
+            </label>
+            <button onclick="deleteNote()">Confirm</button>
+        </div>
+        <div class="action">
+            <label>
+                Detach note at slot #
+                <input type="number" id="noteToDetach" class="singleNumInput" value="1" min="1" max="9"/>
+            </label>
+            <button onclick="detachNote()">Confirm</button>
+        </div>
+        <div class="action">
+            <label>
+                Reattach note at slot #
+                <input type="number" id="reattachAt" class="singleNumInput" value="1" min="1" max="9"/>
+            </label>
+            <button onclick="reattachNote()">Confirm</button>
+        </div>
+        <div class="action">
+            <button onclick="flipWriter()">Flip note writer</button>
+        </div>
+        <div class="action">
+            <button onclick="unflipWriter()">Remove flip class</button>
+        </div>
+    </div>
+    <div id="notesBox">
+        <div id="noteWriter" name="slot1">
+            <textarea id="noteWriterArea" maxlength="296"></textarea>
+            <br>
+            <div id="noteWriterActionMenu">
+                <button id="moveLeft" onclick="moveLeft()">&#x2190;</button>
+                <button id="moveRight" onclick="moveRight()">&#8594;</button>
+                <button id="finishNote" onclick="insertNote()">Finish note</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
